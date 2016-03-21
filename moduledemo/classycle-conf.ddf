@@ -1,0 +1,19 @@
+show allResults
+
+{package} = ch.bbv.moduledemo
+
+[adapter] = ${package}.adapter.*
+[application] = ${package}.application.*
+[domain] = ${package}.domain.*
+[infrastructure] = ${package}.infrastructure.*
+
+check sets [adapter] [application] [domain] [infrastructure]
+
+check absenceOfPackageCycles > 1 in ${package}.*
+
+check [adapter] [application] [domain] independentOf [infrastructure]
+
+layer adapter = [adapter]
+layer application = [application]
+layer domain = [domain]
+check layeringOf domain application adapter

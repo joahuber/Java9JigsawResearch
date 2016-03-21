@@ -1,0 +1,110 @@
+== Java 9 Modularization
+
+=== How to analyze current structure
+
+Shows different options on how to analyze the structure of a project.
+
+==== JDepend
+
+[cols="s,5"]
+|========
+|URL         | http://clarkware.com/software/JDepend.html
+|Last update | September 2015
+|License     | BSD
+|========
+
+The JUnit test does not give enough details to analyze the problem.
+So it is difficult to find the root cause of cycles for example.
+
+
+==== jQAssistant
+
+[cols="s,5"]
+|========
+|URL         | http://jqassistant.org/
+|Last update | January 2016
+|License     | GPLv3
+|========
+
+It's the one that uses a Neo4J database.
+
+
+==== Gradle Model
+
+TBD
+
+==== Dependency-analyzer
+
+[cols="s,5"]
+|========
+|URL         | http://www.dependency-analyzer.org/
+|Last update | August 2015
+|License     | something self written
+|========
+
+It's only a graphical tool to analyze a project.
+It has no automated tests that could be integrated into a build.
+
+
+==== Degraph
+
+[cols="s,5"]
+|========
+|URL         | http://schauder.github.io/degraph/
+|Last update | March 2015
+|License     | Apache v2
+|========
+
+TBD
+
+==== Classycle
+
+[cols="s,5"]
+|========
+|URL         | http://classycle.sourceforge.net/
+|Last update | November 2014
+|License     | something self written
+|========
+
+You can define modules, let it check for access and cycles. But:
+
+IMPORTANT: Fails on Java 8 Lambdas
+
+=== Sample: moduledemo
+The `moduledemo` sample contains these three subprojects:
+
+* good: all checks should be ok
+* cycle: there is a package cycle in the project
+* layer: the code violates the layering we defined
+
+Each subproject has the same structure. They implements a very simple
+http://alistair.cockburn.us/Hexagonal+architecture[ports and adapters] architecture.
+The packages below the main level are:
+
+[cols="s,2"]
+|========
+| adapter        | technical implementations
+| application    | the application services, a.k.a. the entry points to the application
+| domain         | the "technology free" domain model
+| infrastructure | helper code
+|========
+
+The dependency rules are as follows
+
+* `adapter`, `application` and `domain` must not depend on infrastructure
+* there are three layers in this order `adapter` -> `application` -> `domain`
+
+==== Gradle tasks
+At the moment there are the following task that you can run to do some checks:
+
+[cols="s,2"]
+|========
+| classycleCheck  | Runs the classycle checks and prints the result to the console
+| classycleReport | Runs the classycle checks and creates a report in `classycleRepot/classycle.xml`. You have to open it in a browser that can handle XSLT stuff (i.e. Firefox)
+| jdependText     | Runs JDepend and writes the result to the console
+| jdependUI       | Runs JDepend and opens the UI with the result
+|========
+
+To run the task on a single project you can execute:
+
+ ./gradlew good:jdependText

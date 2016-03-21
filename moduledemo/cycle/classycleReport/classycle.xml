@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='CarWash' date='2016-02-01'>
+    <cycles>
+        <cycle name="ch.bbv.moduledemo.domain.config.Templates and inner classes" size="3" longestWalk="1" girth="2"
+               radius="1" diameter="2" bestFragmentSize="1">
+            <classes>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates" eccentricity="1" maximumFragmentSize="1"/>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates$1" eccentricity="2" maximumFragmentSize="2"/>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates$2" eccentricity="1" maximumFragmentSize="2"/>
+            </classes>
+            <centerClasses>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates"/>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates$2"/>
+            </centerClasses>
+            <bestFragmenters>
+                <classRef name="ch.bbv.moduledemo.domain.config.Templates"/>
+            </bestFragmenters>
+        </cycle>
+    </cycles>
+    <classes numberOfExternalClasses="16">
+        <class name="ch.bbv.moduledemo.domain.CarWashRepository" sources="build/classes/main" type="interface"
+               innerClass="false" size="195" usedBy="3" usesInternal="1" usesExternal="1" layer="1" cycle="">
+            <classRef name="ch.bbv.moduledemo.adapter.CarWashRepositoryImpl" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.application.CarWashService" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.infrastructure.BindingModule" type="usedBy"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.menu.Menu" sources="build/classes/main" type="class" innerClass="false"
+               size="574" usedBy="1" usesInternal="1" usesExternal="3" layer="2" cycle="">
+            <classRef name="ch.bbv.moduledemo.domain.CarWashOperator" type="usedBy"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="java.util.List" type="usesExternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usesInternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.CarWash" sources="build/classes/main" type="class" innerClass="false"
+               size="410" usedBy="7" usesInternal="0" usesExternal="1" layer="0" cycle="">
+            <classRef name="ch.bbv.moduledemo.Main" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.adapter.CarWashRepositoryImpl" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.application.CarWashService" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWashRepository" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$1" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$2" type="usedBy"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.Main" sources="build/classes/main" type="class" innerClass="false" size="1055"
+               usedBy="0" usesInternal="3" usesExternal="6" layer="4" cycle="">
+            <classRef name="com.google.inject.Module" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.infrastructure.BindingModule" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.application.CarWashService" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+            <classRef name="com.google.inject.Injector" type="usesExternal"/>
+            <classRef name="com.google.inject.Guice" type="usesExternal"/>
+            <classRef name="java.lang.Class" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.CarWashOperator" sources="build/classes/main" type="class"
+               innerClass="false" size="645" usedBy="0" usesInternal="1" usesExternal="2" layer="3" cycle="">
+            <classRef name="ch.bbv.moduledemo.domain.menu.Menu" type="usesInternal"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="java.util.List" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.config.Templates$2" sources="build/classes/main" type="class"
+               innerClass="true" size="719" usedBy="1" usesInternal="3" usesExternal="1" layer="1"
+               cycle="ch.bbv.moduledemo.domain.config.Templates and inner classes">
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usesInternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$1" type="usesInternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.config.Templates" sources="build/classes/main" type="abstract class"
+               innerClass="false" size="1496" usedBy="3" usesInternal="3" usesExternal="4" layer="1"
+               cycle="ch.bbv.moduledemo.domain.config.Templates and inner classes">
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$1" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$2" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.menu.Menu" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$1" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$2" type="usesInternal"/>
+            <classRef name="java.lang.Enum" type="usesExternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="java.lang.Class" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.domain.config.Templates$1" sources="build/classes/main" type="class"
+               innerClass="true" size="662" usedBy="2" usesInternal="2" usesExternal="1" layer="1"
+               cycle="ch.bbv.moduledemo.domain.config.Templates and inner classes">
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates$2" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.config.Templates" type="usesInternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.infrastructure.BindingModule" sources="build/classes/main" type="class"
+               innerClass="false" size="899" usedBy="1" usesInternal="3" usesExternal="5" layer="3" cycle="">
+            <classRef name="ch.bbv.moduledemo.Main" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWashRepository" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.adapter.CarWashRepositoryImpl" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.application.CarWashService" type="usesInternal"/>
+            <classRef name="com.google.inject.Singleton" type="usesExternal"/>
+            <classRef name="com.google.inject.AbstractModule" type="usesExternal"/>
+            <classRef name="com.google.inject.binder.AnnotatedBindingBuilder" type="usesExternal"/>
+            <classRef name="java.lang.Class" type="usesExternal"/>
+            <classRef name="com.google.inject.binder.ScopedBindingBuilder" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.application.CarWashService" sources="build/classes/main" type="class"
+               innerClass="false" size="1200" usedBy="2" usesInternal="2" usesExternal="6" layer="2" cycle="">
+            <classRef name="ch.bbv.moduledemo.Main" type="usedBy"/>
+            <classRef name="ch.bbv.moduledemo.infrastructure.BindingModule" type="usedBy"/>
+            <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWashRepository" type="usesInternal"/>
+            <classRef name="javax.inject.Inject" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="java.lang.System" type="usesExternal"/>
+            <classRef name="java.io.PrintStream" type="usesExternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+        </class>
+        <class name="ch.bbv.moduledemo.adapter.CarWashRepositoryImpl" sources="build/classes/main" type="class"
+               innerClass="false" size="930" usedBy="1" usesInternal="2" usesExternal="5" layer="2" cycle="">
+            <classRef name="ch.bbv.moduledemo.infrastructure.BindingModule" type="usedBy"/>
+            <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+            <classRef name="java.lang.Object" type="usesExternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWashRepository" type="usesInternal"/>
+            <classRef name="ch.bbv.moduledemo.domain.CarWash" type="usesInternal"/>
+            <classRef name="java.lang.System" type="usesExternal"/>
+            <classRef name="java.io.PrintStream" type="usesExternal"/>
+            <classRef name="java.lang.String" type="usesExternal"/>
+        </class>
+    </classes>
+    <packageCycles>
+        <packageCycle name="ch.bbv.moduledemo.domain et al." size="3" longestWalk="0" girth="1" radius="2" diameter="2"
+                      bestFragmentSize="1">
+            <packages>
+                <packageRef name="ch.bbv.moduledemo.domain" eccentricity="2" maximumFragmentSize="1"/>
+                <packageRef name="ch.bbv.moduledemo.domain.menu" eccentricity="2" maximumFragmentSize="1"/>
+                <packageRef name="ch.bbv.moduledemo.domain.config" eccentricity="2" maximumFragmentSize="1"/>
+            </packages>
+            <centerPackages>
+                <packageRef name="ch.bbv.moduledemo.domain"/>
+                <packageRef name="ch.bbv.moduledemo.domain.menu"/>
+                <packageRef name="ch.bbv.moduledemo.domain.config"/>
+            </centerPackages>
+            <bestFragmenters>
+                <packageRef name="ch.bbv.moduledemo.domain"/>
+                <packageRef name="ch.bbv.moduledemo.domain.menu"/>
+                <packageRef name="ch.bbv.moduledemo.domain.config"/>
+            </bestFragmenters>
+        </packageCycle>
+    </packageCycles>
+    <packages>
+        <package name="ch.bbv.moduledemo" sources="build/classes/main" size="1" usedBy="0" usesInternal="3"
+                 usesExternal="2" layer="3" cycle="">
+            <packageRef name="com.google.inject" type="usesExternal"/>
+            <packageRef name="ch.bbv.moduledemo.infrastructure" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.application" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.application" sources="build/classes/main" size="1" usedBy="2" usesInternal="1"
+                 usesExternal="3" layer="1" cycle="">
+            <packageRef name="ch.bbv.moduledemo" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.infrastructure" type="usedBy"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="javax.inject" type="usesExternal"/>
+            <packageRef name="java.io" type="usesExternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.domain" sources="build/classes/main" size="3" usedBy="6" usesInternal="2"
+                 usesExternal="2" layer="0" cycle="ch.bbv.moduledemo.domain et al.">
+            <packageRef name="ch.bbv.moduledemo.domain" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.domain.config" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.infrastructure" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.application" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.adapter" type="usedBy"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain.menu" type="usesInternal"/>
+            <packageRef name="java.util" type="usesExternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.infrastructure" sources="build/classes/main" size="1" usedBy="1"
+                 usesInternal="3" usesExternal="3" layer="2" cycle="">
+            <packageRef name="ch.bbv.moduledemo" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.adapter" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.application" type="usesInternal"/>
+            <packageRef name="com.google.inject" type="usesExternal"/>
+            <packageRef name="com.google.inject.binder" type="usesExternal"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.domain.menu" sources="build/classes/main" size="1" usedBy="1" usesInternal="1"
+                 usesExternal="2" layer="0" cycle="ch.bbv.moduledemo.domain et al.">
+            <packageRef name="ch.bbv.moduledemo.domain" type="usedBy"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+            <packageRef name="java.util" type="usesExternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain.config" type="usesInternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.adapter" sources="build/classes/main" size="1" usedBy="1" usesInternal="1"
+                 usesExternal="2" layer="1" cycle="">
+            <packageRef name="ch.bbv.moduledemo.infrastructure" type="usedBy"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="java.io" type="usesExternal"/>
+        </package>
+        <package name="ch.bbv.moduledemo.domain.config" sources="build/classes/main" size="3" usedBy="2"
+                 usesInternal="2" usesExternal="1" layer="0" cycle="ch.bbv.moduledemo.domain et al.">
+            <packageRef name="ch.bbv.moduledemo.domain.menu" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.domain.config" type="usedBy"/>
+            <packageRef name="ch.bbv.moduledemo.domain" type="usesInternal"/>
+            <packageRef name="ch.bbv.moduledemo.domain.config" type="usesInternal"/>
+            <packageRef name="java.lang" type="usesExternal"/>
+        </package>
+    </packages>
+</classycle>
