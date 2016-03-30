@@ -62,6 +62,8 @@ You define so called _slices_ where each of them consists of a set of classes. T
 
 The output is precise, i.e. it prints the dependencies that violate the rules and if you need to analyze it more precisely it writes a `graphml` file that can be viewed with `yEd`.
 
+A disadvantage is that its libraries bring some dependencies which will be in the test dependencies.
+
 ==== Classycle
 
 [cols="s,5"]
