@@ -55,7 +55,12 @@ It has no automated tests that could be integrated into a build.
 |License     | Apache v2
 |========
 
-TBD
+You define so called _slices_ where each of them consists of a set of classes. Then you can define the allowed dependencies between them. There are two ways to use it:
+
+* Console app: you define the requirements in a text files and start a command line tool.
+* JUnit test: you do the same in a unit test.
+
+The output is precise, i.e. it prints the dependencies that violate the rules and if you need to analyze it more precisely it writes a `graphml` file that can be viewed with `yEd`.
 
 ==== Classycle
 
@@ -107,4 +112,8 @@ At the moment there are the following task that you can run to do some checks:
 
 To run the task on a single project you can execute:
 
- ./gradlew good:jdependText
+ ./gradlew -x test layer:classycleCheck
+
+****
+The `-x test` is necessary because the degraph unit test fails of course.
+****

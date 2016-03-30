@@ -18,6 +18,7 @@ subprojects {
 	dependencies {
 	    compile 'com.google.inject:guice:4.0'
 	    testCompile group: 'junit', name: 'junit', version: '4.11'
+		testCompile('de.schauderhaft.degraph:degraph-check:0.1.2')
 	    classycle 'org.specs2:classycle:1.4.3'
 	    jdepend 'jdepend:jdepend:2.9.1'
 	}
