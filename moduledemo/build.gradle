@@ -1,8 +1,10 @@
+
 subprojects {
 	group 'ch.bbv'
 	version '1.0-SNAPSHOT'
 
-	apply plugin: 'java'
+
+	//apply plugin: 'java'
 
 	sourceCompatibility = 1.8
 
@@ -10,6 +12,12 @@ subprojects {
 	    mavenCentral()
 	}
 
+
+    model {
+        components {
+            main(JvmLibrarySpec)
+        }
+    }
 	configurations {
 	    classycle
 	    jdepend

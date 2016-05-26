@@ -1,0 +1,78 @@
+plugins {
+    id 'jvm-component'
+    id 'java-lang'
+}
+repositories {
+    mavenCentral()
+}
+
+model {
+    components {
+        adapter(JvmLibrarySpec) {
+            sources {
+                java {
+                    source.srcDir 'src/main/java/ch/bbv/moduledemo/adapter/'
+                    dependencies {
+                        module 'com.google.inject:guice:4.0'
+                        library 'application'
+                        library 'domain'
+                    }
+                }
+            }
+        }
+        application(JvmLibrarySpec) {
+            sources {
+                java {
+                    source.srcDir 'src/main/java/ch/bbv/moduledemo/application/'
+                    dependencies {
+                        module 'com.google.inject:guice:4.0'
+                        library 'domain'
+                    }
+                }
+            }
+        }
+        domain(JvmLibrarySpec) {
+            sources {
+                java {
+                    source.srcDir 'src/main/java/ch/bbv/moduledemo/domain/'
+
+                }
+            }
+        }
+
+        infrastructure(JvmLibrarySpec) {
+            sources {
+                java {
+                    source.srcDir 'src/main/java/ch/bbv/moduledemo/infrastructure/'
+                    dependencies {
+                        module 'com.google.inject:guice:4.0'
+                        library 'adapter'
+                        library 'application'
+                        library 'domain'
+
+                    }
+
+                }
+            }
+        }
+
+
+        main(JvmLibrarySpec) {
+            sources {
+                java {
+                    source.srcDir 'src/main/java/ch/bbv/moduledemo/main/'
+                    dependencies {
+                        module 'com.google.inject:guice:4.0'
+                        library 'adapter'
+                        library 'application'
+                        library 'domain'
+                        library 'infrastructure'
+                    }
+
+                }
+            }
+        }
+
+
+    }
+}

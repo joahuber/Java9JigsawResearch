@@ -1,4 +1,4 @@
-package ch.bbv.moduledemo;
+package ch.bbv.moduledemo.main;
 
 import ch.bbv.moduledemo.application.CarWashService;
 import ch.bbv.moduledemo.domain.CarWash;
